@@ -85,7 +85,6 @@ bab : 2 distinct characters
 
 No substrings of length 3 exists with 
 exactly 3 distinct characters
-```
 
 # 04 Product Array Puzzle
 Given an array A of size N, construct a Product Array P (of same size) such that P is equal to the product of all the elements of A except A[i].
