@@ -5,7 +5,7 @@ public class Problem03 {
     public boolean isDistinct(String input) {
         HashMap<Character, Integer> words = new HashMap<>();
         for(int i = 0; i < input.length(); i++) {
-            for(int j = i +1 ; j < input.length(); j++) {
+            for(int j = i + 1 ; j < input.length(); j++) {
                 if(words.containsKey(input.charAt(i))) {
                     return false;
                 }else {
