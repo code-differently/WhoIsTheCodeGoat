@@ -13,11 +13,12 @@ import java.util.Set;
         public static Set<String> findAllStrings(String input) {
 
             Set<String> subStrings = new HashSet<String>();
+            String cleaned_input = removeDuplicateChars(parseString(input));
     
-            for (int i = 0; i < input.length(); i++) {
-                for (int j = i + 1; j <= input.length(); j++) {
+            for (int i = 0; i < cleaned_input.length(); i++) {
+                for (int j = i + 1; j <= cleaned_input.length(); j++) {
     
-                    String word = input.substring(i, j);
+                    String word = cleaned_input.substring(i, j);
                   
                         subStrings.add(word);
                 }
@@ -83,10 +84,5 @@ import java.util.Set;
         return "";
     }
 
-    public static void removePermutations(String inpuString){
-
-
-
-    }
 }
 

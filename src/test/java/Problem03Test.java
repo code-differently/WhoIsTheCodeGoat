@@ -36,12 +36,6 @@ public class Problem03Test {
     }
 
     @Test
-    public void  removePermuatations() {
-        
-    }
-
-
-    @Test
     public void removeDuplicateChars() {
 
         String given = "aabc";
