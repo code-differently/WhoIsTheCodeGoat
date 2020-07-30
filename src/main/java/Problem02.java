@@ -1,2 +1,4 @@
-public class Problem02 {
+public class Problem02 
+{
+    
 }
