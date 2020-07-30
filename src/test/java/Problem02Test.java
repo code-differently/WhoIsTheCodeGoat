@@ -3,10 +3,11 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class Problem02Test {
+
     Problem02 prob2;
 
     @Before
-    public void initial() {
+    public void initialize() {
         prob2 = new Problem02();
     }
 
@@ -36,7 +37,6 @@ public class Problem02Test {
 
         //Then
         Assert.assertEquals(expected, actual);
-        
     }
 
     @Test
@@ -52,8 +52,8 @@ public class Problem02Test {
         String actual = prob2.magicSquare(7);
 
         //Then
-        Assert.assertEquals(expected, actual);
-        
+        Assert.assertEquals(expected, actual);  
+
     }
 
 }

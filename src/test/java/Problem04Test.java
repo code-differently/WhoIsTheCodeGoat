@@ -26,15 +26,14 @@ public class Problem04Test {
     @Test
     public void productArrayTest2() {
         //Given
-        int[] arr = {12, 20};
+        int[] array = {12, 20};
         int[] expected = {20, 12};
     
         //When
-        int[] actual = prob4.productArray(arr);
+        int[] actual = prob4.productArray(array);
 
         //Then
-        Assert.assertArrayEquals(expected, actual);
-        
+        Assert.assertArrayEquals(expected, actual);   
     }
 
 }

@@ -2,6 +2,7 @@
 public class Problem02 {
 
     public String magicSquare(int num) {
+        
         String output = "";
         int squares[][] = new int[num][num];
         int row = 0;
