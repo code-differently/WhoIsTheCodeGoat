@@ -1,31 +1,60 @@
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
-import java.util.Hashtable;
 import java.util.Set;
 
-    public class Problem03 {
+public class Problem03 {
+    public static void main(String[] args) {
+        ArrayList<String> words = new ArrayList<>();
+        
+            words.add("hello");
+            words.add("goodbye");
 
-        public static void main(String[] args) {
-    
-            findAllStrings("aaba");
-        }
-    
+            String myword = "jello";
 
-        public static Set<String> findAllStrings(String input) {
+            HashMap<Integer, ArrayList<String>> map = new HashMap<>();
+            map.put(5, words);
 
-            Set<String> subStrings = new HashSet<String>();
-            String cleaned_input = removeDuplicateChars(parseString(input));
-    
-            for (int i = 0; i < cleaned_input.length(); i++) {
-                for (int j = i + 1; j <= cleaned_input.length(); j++) {
-    
-                    String word = cleaned_input.substring(i, j);
-                  
-                        subStrings.add(word);
-                }
-            }
-            return subStrings;
+            addToWordDict(map, myword);
+            System.out.println(map.entrySet());
         }
 
+    public static HashMap<Integer, ArrayList<String>> findAllStrings(String input) {
+
+        HashMap<Integer, ArrayList<String>> dict = new HashMap<>();
+        
+        String cleaned_input = removeDuplicateChars(input);
+        
+        for (int i = 0; i < cleaned_input.length(); i++){
+            getSubtrings(i, cleaned_input, dict);
+        }
+        return dict;
+    }
+
+    public static void getSubtrings(int start, String word, HashMap<Integer, ArrayList<String>> dict){
+        for (int j = start + 1; j <= word.length(); j++){
+            String new_word = word.substring(start, j);
+            addToWordDict(dict, new_word);
+        }
+    }
+
+    //
+
+    public static void addToWordDict(HashMap<Integer, ArrayList<String>> dict, String word){
+        if (!dict.containsKey(word.length())){
+            ArrayList<String> wordsWithSameLength = new ArrayList<>();
+            wordsWithSameLength.add(word);
+            dict.put(word.length(), wordsWithSameLength);
+        } 
+        else {
+            //dict.put(word.length(), dict.get(word.length()).add(word));
+
+            ArrayList<String> wordsWithSameLength = dict.get(word.length());
+            wordsWithSameLength.add(word);
+            dict.put(word.length(), wordsWithSameLength);
+        }
+    }
+      
     /**
      * @param inputStr - A given string
      * @return newFormatedStr - A string without any digits, spaces, or special characters
@@ -41,7 +70,6 @@ import java.util.Set;
      * @param K - given length the substrings are allowed to be
      */
     public static String removeDuplicateChars(String inputStr){
-        
         Set<String> uniqueChars = new HashSet<>();
         String removed_duplicates = "";
 
@@ -58,19 +86,13 @@ import java.util.Set;
         return removed_duplicates;
     }
 
-
     /**
      * @param lowercaseAlpha - A given string of lowercase alphabets
      * @param K - given length the substrings are allowed to be
      */
-    public static String countSubstrings(String lowercaseAlpha, int K){
+    public static String getSubstrings(String lowercaseAlpha, int K){
 
-        Hashtable<String,Integer> subs = new Hashtable<>();
-
-        String formattedStr = parseString(lowercaseAlpha);
-
-        String possibleSubstring = "";
-
+        
         //Generate all possible substrings and check whether the substring has exactly k distinct characters or not.
 
         //check if all the string in the string are lowercase
@@ -83,6 +105,5 @@ import java.util.Set;
 
         return "";
     }
-
 }
 
