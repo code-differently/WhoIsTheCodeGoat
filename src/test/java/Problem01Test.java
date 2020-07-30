@@ -50,4 +50,16 @@ public class Problem01Test {
         // Then
         Assert.assertEquals(expected,actual);
     }
+
+    @Test
+    public void smallPrimeTest5(){
+        // Given
+        String expected="2";
+
+        // When
+        String actual=Problem01.smallerPrimes(2);
+
+        // Then
+        Assert.assertEquals(expected,actual);
+    }
 }
