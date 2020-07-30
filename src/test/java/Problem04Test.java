@@ -21,4 +21,13 @@ public class Problem04Test {
 
         assertEquals(Arrays.toString(expected), Arrays.toString(actual));
     }
+
+    @Test
+    public void computeProductArray2() {
+        int[] expected = {20, 12};
+
+        int[] actual = problem04.computeProductArray(12, 20);
+
+        assertEquals(Arrays.toString(expected), Arrays.toString(actual));
+    }
 }
