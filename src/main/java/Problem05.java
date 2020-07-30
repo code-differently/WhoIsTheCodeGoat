@@ -11,7 +11,7 @@ public class Problem05 {
             }
             else if(previousValue < currentValue && currentIndex < input.length() - 1) {
                 potentialValue = previousValue;
-                
+
             }
             previousIndex++;
         }
