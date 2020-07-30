@@ -1,5 +1,3 @@
-import java.util.ArrayList;
-
 public class Problem04 {
 
     public int[] productArray(int [] arr){

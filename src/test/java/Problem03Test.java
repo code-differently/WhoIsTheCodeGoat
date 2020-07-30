@@ -47,4 +47,28 @@ public class Problem03Test {
         Assert.assertEquals(expected, actual);
         
     }
+
+    @Test
+    public void trueFalseTest() {
+        // Given
+        boolean expected = false;
+
+        // When
+        boolean actual = prob3.isDistinct("ababab");
+
+        //Then
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void trueFalseTest2() {
+        // Given
+        boolean expected = true;
+
+        // When
+        boolean actual = prob3.isDistinct("cd");
+
+        //Then
+        Assert.assertEquals(expected, actual);
+    }
 }
