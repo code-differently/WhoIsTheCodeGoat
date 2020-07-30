@@ -24,4 +24,32 @@ public class Problem05Test {
 
     Assert.assertArrayEquals(expected, actual);
   }
+
+  @Test 
+  public void stringTest(){
+    String s = "lmno"; 
+
+    String expected = "lmon"; 
+
+
+    String actual = p.validate(s);
+    System.out.println(actual);
+    
+    Assert.assertTrue(expected.equals(actual));;
+  }
+
+  @Test 
+  public void stringTest2(){
+    String s = "dcba"; 
+
+    String expected = "no answer"; 
+
+
+    String actual = p.validate(s);
+    System.out.println(actual);
+    
+    Assert.assertTrue(expected.equals(actual));;
+  }
+
+
 }
