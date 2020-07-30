@@ -48,7 +48,7 @@ public class Problem03Test {
         String str = "Look";
         Problem03.addToWordDict(map, str);
 
-        ArrayList<String> elements = map.get(str);
+        ArrayList<String> elements = map.get(4); //get method needs the key, list of words with corresponding length
         int actual = elements.size();
         int expected = 4; //arrliay was three, adding "Look" should increase arraylist
 

@@ -18,6 +18,6 @@ public class Problem05 {
 
         //Step four 
         //find the smallest lecigraphic word in "GREATER THAN WORD" data structure 
-
+        return null;
     }
 }
