@@ -3,7 +3,18 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Set;
 
-public class Problem03 {
+public class Problem03 { 
+    //Generate all possible substrings and check whether the substring has exactly k distinct characters or not.
+
+    //check if all the string in the string are lowercase
+
+    //find all the possible substring of that specific length 
+
+    //if the possible substrings are not equal to the length K add 
+
+    //if any of the valid substrings do not equal return 0
+
+
     public static void main(String[] args) {
         ArrayList<String> words = new ArrayList<>();
         
@@ -23,7 +34,7 @@ public class Problem03 {
 
         HashMap<Integer, ArrayList<String>> dict = new HashMap<>();
         
-        String cleaned_input = removeDuplicateChars(input);
+        String cleaned_input = removeDuplicateChars(parseString(input));
         
         for (int i = 0; i < cleaned_input.length(); i++){
             getSubtrings(i, cleaned_input, dict);
@@ -37,8 +48,6 @@ public class Problem03 {
             addToWordDict(dict, new_word);
         }
     }
-
-    //
 
     public static void addToWordDict(HashMap<Integer, ArrayList<String>> dict, String word){
         if (!dict.containsKey(word.length())){
@@ -90,20 +99,15 @@ public class Problem03 {
      * @param lowercaseAlpha - A given string of lowercase alphabets
      * @param K - given length the substrings are allowed to be
      */
-    public static String getSubstrings(String lowercaseAlpha, int K){
+    public static int getSubstrings(String lowercaseAlpha, int stringLength){
 
-        
-        //Generate all possible substrings and check whether the substring has exactly k distinct characters or not.
+        String formated_string = removeDuplicateChars(parseString(lowercaseAlpha));
 
-        //check if all the string in the string are lowercase
+        HashMap<Integer, ArrayList<String>> word_variations = findAllStrings(formated_string);
 
-        //find all the possible substring of that specific length 
-
-        //if the possible substrings are not equal to the length K add 
-
-        //if any of the valid substrings do not equal return 0
-
-        return "";
+        System.out.println(word_variations.get(stringLength));
+        return word_variations.get(stringLength).size();
     }
+
 }
 

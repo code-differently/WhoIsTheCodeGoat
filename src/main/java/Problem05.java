@@ -1,9 +1,14 @@
 public class Problem05 {
 
-    public static String BiggerIsGreater(String word){
+    public static void main(String[] args){
+
+
+    }
+
+    public static String BiggerIsGreater(char[] word){
 
         //steps ONE
-        // get every string variation of a string (you want permuatatiosn)
+        // get every string variation of a string (you want permuatations)
         // every single possible combination using the characters of the given you inputted 
 
 
@@ -19,5 +24,18 @@ public class Problem05 {
         //Step four 
         //find the smallest lecigraphic word in "GREATER THAN WORD" data structure 
         return null;
+    }
+
+    public static String printAllPermutations(String str, String strAns){
+
+        if(str.length() == 0){
+            return "Empty string";
+        }
+
+        for (int i = 0; i < str.length(); i++) {
+            String newStr = str + strAns.charAt(i);
+
+            
+        }
     }
 }
