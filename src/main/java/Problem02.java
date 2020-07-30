@@ -4,6 +4,7 @@ public class Problem02
     {   
 
         int[][] magicSquare = new int[size][size];
+        int sum = size * ( size * size + 1 ) / 2;
 
         int a = (size / 2);
         int b = (size - 1);
@@ -39,7 +40,6 @@ public class Problem02
             b++;
             a--;
         }
-        int sum = size * ( size * size + 1 ) / 2;
 
         return sum;
 

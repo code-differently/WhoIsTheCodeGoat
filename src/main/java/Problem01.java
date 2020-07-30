@@ -34,18 +34,4 @@ public class Problem01
  }
 
 
-public static void main(String[] args)
-{   
-    Problem01 problem01 = new Problem01();
-    int n = 10;
-
-        //when
-        problem01.sieveOfEratosthenes(n);
-        
-        //Object [] expected =  {2, 3, 5, 7};
-
-        //then
-        //assertArrayEquals(expected, actual);
-}
-
 }

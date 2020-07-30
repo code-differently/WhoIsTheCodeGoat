@@ -1,15 +1,8 @@
 import static org.junit.Assert.assertEquals;
-
-import org.junit.Before;
 import org.junit.Test;
 
 public class Problem02Test 
 {
-    @Before
-    public void setup()
-    {
-        //Problem02 problem02 = new Problem02();
-    }
 
     @Test
     public void magicSquareTest1()
