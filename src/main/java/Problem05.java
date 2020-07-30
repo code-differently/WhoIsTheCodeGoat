@@ -1,20 +1,22 @@
 public class Problem05 {
     public String biggerIsGreater(String input) {
-        int previousIndex = 0;
-        char previousValue, currentValue, potentialValue;
+        int previousIndex = 0, potentialIndex = -1;
+        char previousValue, currentValue;
         StringBuilder answer = new StringBuilder();
+        boolean swapped = false;
         for(int currentIndex = 1; currentIndex < input.length(); currentIndex++) {
             currentValue = input.charAt(currentIndex);
             previousValue = input.charAt(previousIndex);
             if(previousValue < currentValue && currentIndex == input.length() - 1) {
+                swapped = true;
                 answer.append(swap(input, previousIndex, currentIndex));
             }
             else if(previousValue < currentValue && currentIndex < input.length() - 1) {
-                potentialValue = previousValue;
-
+                potentialIndex = currentIndex;
             }
             previousIndex++;
         }
+        answer.append(!swapped && potentialIndex != -1 ? swap(input, potentialIndex, potentialIndex + 1) : "");
         answer.append(answer.length() == 0 ? "no answer" : "");
         return answer.toString();
     }
