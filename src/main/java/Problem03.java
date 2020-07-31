@@ -14,21 +14,12 @@ public class Problem03 {
 
     //if any of the valid substrings do not equal return 0
 
-
     public static void main(String[] args) {
         ArrayList<String> words = new ArrayList<>();
-        
-            words.add("hello");
-            words.add("goodbye");
 
-            String myword = "jello";
+        System.out.println(getSubstrings("FOV", 2));
 
-            HashMap<Integer, ArrayList<String>> map = new HashMap<>();
-            map.put(5, words);
-
-            addToWordDict(map, myword);
-            System.out.println(map.entrySet());
-        }
+    }
 
     public static HashMap<Integer, ArrayList<String>> findAllStrings(String input) {
 
@@ -37,12 +28,12 @@ public class Problem03 {
         String cleaned_input = removeDuplicateChars(parseString(input));
         
         for (int i = 0; i < cleaned_input.length(); i++){
-            getSubtrings(i, cleaned_input, dict);
+            getPossibleSubstrings(i, cleaned_input, dict);
         }
         return dict;
     }
 
-    public static void getSubtrings(int start, String word, HashMap<Integer, ArrayList<String>> dict){
+    public static void getPossibleSubstrings(int start, String word, HashMap<Integer, ArrayList<String>> dict){
         for (int j = start + 1; j <= word.length(); j++){
             String new_word = word.substring(start, j);
             addToWordDict(dict, new_word);

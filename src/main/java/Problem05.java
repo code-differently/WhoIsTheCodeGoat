@@ -37,5 +37,6 @@ public class Problem05 {
             String newAns = strAns.substring(0, i) + strAns.substring(i + 1);
             printAllPermutations(newStr, newAns);
         }
+        return null;
     }
 }
