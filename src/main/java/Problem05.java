@@ -34,8 +34,8 @@ public class Problem05 {
 
         for (int i = 0; i < str.length(); i++) {
             String newStr = str + strAns.charAt(i);
-
-            
+            String newAns = strAns.substring(0, i) + strAns.substring(i + 1);
+            printAllPermutations(newStr, newAns);
         }
     }
 }
